@@ -1,6 +1,9 @@
 var Client = require('node-xmpp-client');
+var auth = require('./auth.json');
 
-var client = new Client(require('./auth.json'));
+console.log(auth);
+
+var client = new Client(auth);
 
 client.on('online', function() {
 	console.log("We're online!");
