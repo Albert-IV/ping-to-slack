@@ -1,8 +1,6 @@
 var Client = require('node-xmpp-client');
 var auth = require('./auth.json');
 
-console.log(auth);
-
 var client = new Client(auth);
 
 client.on('online', function() {
@@ -16,4 +14,12 @@ client.on('stanza', function(stan) {
 client.on('error', function(e) {
 	console.error(e);
 	process.exit(0);
-})
+});
+
+client.on('disconnect', function() {
+	console.log("Disconnected...");
+});
+
+client.on('reconnect', function () {
+  console.log('Reconnecting...');
+});
