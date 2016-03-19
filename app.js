@@ -10,10 +10,10 @@ client.on('online', function() {
 });
 
 client.on('stanza', function(stan) {
-	console.dir(stan);
+	console.log(JSON.stringify(stan, null, '  '));
 });
 
 client.on('error', function(e) {
-	console.error(e.stack);
+	console.error(e);
 	process.exit(0);
 })
