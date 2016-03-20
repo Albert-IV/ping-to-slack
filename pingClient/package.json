@@ -1,4 +1,4 @@
 {
   "name" : "pingClient",
-  "main" : "./pingClient.coffee"
+  "main" : "./pingClient.js"
 }

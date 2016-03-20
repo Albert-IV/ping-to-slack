@@ -1,4 +1,4 @@
 {
   "name" : "slackClient",
-  "main" : "./slackClient.coffee"
+  "main" : "./slackClient.js"
 }
