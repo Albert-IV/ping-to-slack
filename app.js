@@ -14,6 +14,7 @@ pingClient.on('stanza', function(stanza) {
 		console.log('stanza.is() not a ping! :( :( :( :(')
 	}
 
-	console.log(stanza.getChildText('body'))
+	console.log(stanza);
+	console.log(stanza.getChildText('body'));
 });
 
