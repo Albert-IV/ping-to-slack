@@ -8,7 +8,7 @@ function pingClient(auth) {
 
 	client.on('error', function(e) {
 		console.error(e);
-		process.exit(0);
+		process.exit(1);
 	});
 
 	client.on('disconnect', function() {
