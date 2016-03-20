@@ -1,7 +1,7 @@
 var auth = require('./auth.json');
 
 var pingClient = require('./pingClient')(auth.ping);
-var slackClient = require('./slackClient')(auth.slack);
+// var slackClient = require('./slackClient')(auth.slack);
 
 pingClient.on('stanza', function(stanza) {
 	if( stanza.attrs.type == "get" && stanza.children[0].name == "ping" ) {
