@@ -1,25 +1,19 @@
-var Client = require('node-xmpp-client');
 var auth = require('./auth.json');
 
-var client = new Client(auth);
+var pingClient = require('pingClient')(auth.ping);
+var slackClient = require('slackClient')(auth.slack);
 
-client.on('online', function() {
-	console.log("We're online!");
+pingClient.on('stanza', function(stan) {
+	if( stan.attrs.type == "get" && stan.children[0].name == "ping" ) {
+		console.log("This is a ping!")
+	}
+
+	if( stanza.is('ping') ) {
+		console.log("stanza.is() a ping!")
+	} else {
+		console.log('stanza.is() not a ping! :( :( :( :(')
+	}
+
+	console.log(stanza.getChildText('body'))
 });
 
-client.on('stanza', function(stan) {
-	console.log(JSON.stringify(stan, null, '  '));
-});
-
-client.on('error', function(e) {
-	console.error(e);
-	process.exit(0);
-});
-
-client.on('disconnect', function() {
-	console.log("Disconnected...");
-});
-
-client.on('reconnect', function () {
-  console.log('Reconnecting...');
-});
