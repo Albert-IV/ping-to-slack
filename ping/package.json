@@ -1,5 +1,4 @@
-
 {
-  "name" : "pingClient",
+  "name" : "ping",
   "main" : "./pingClient.coffee"
 }
