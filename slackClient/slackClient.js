@@ -20,7 +20,7 @@ function slackClient(auth) {
 	  console.log('Reconnecting...');
 	});
 
-	return client
+	return client;
 }
 
 module.exports = slackClient;
