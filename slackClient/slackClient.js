@@ -7,7 +7,8 @@ function slackClient(auth) {
 	});
 
 	client.on('error', function(e) {
-		console.error(e);
+		console.log('Error with Slack client!');
+		console.trace(e);
 		process.exit(1);
 	});
 

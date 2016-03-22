@@ -7,7 +7,8 @@ function pingClient(auth) {
 	});
 
 	client.on('error', function(e) {
-		console.error(e);
+		console.log('Error with ping client!');
+		console.trace(e);
 		process.exit(1);
 	});
 
@@ -19,7 +20,7 @@ function pingClient(auth) {
 	  console.log('Reconnecting...');
 	});
 
-	return client
+	return client;
 }
 
 module.exports = pingClient;
